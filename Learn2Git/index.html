@@ -116,18 +116,28 @@
                         <li>GitHub</li>
                     </ul>
                 </section>
-                
+
                 <section>
                     <section data-background="#4E9D97">
                         <h1>What is Version Control?</h1>
+                        <aside class="notes">
+                            <ul>
+                                <li>Who uses Version Control?</li>
+                                <li>Who has ever heard about Git?</li>
+                                <li>Who has ever used with Git?</li>
+                            </ul>
+                            <p>Linus says it's SCM (Source Control Management)</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>Centralized Version Control</h2>
                         <img src="img/centralized-vcs.png" width="70%" height="70%" class="transparent-img" />
+                        <aside class="notes">CVS, Subversion, Perforce</aside>
                     </section>
                     <section>
                         <h2>Distributed Version Control</h2>
                         <img src="img/distributed-vcs.png" width="50%" height="50%" class="transparent-img" />
+                        <aside class="notes">Git, Mercurial, Bazaar</aside>
                     </section>
                 </section>
 
@@ -139,12 +149,22 @@
                         <audio data-autoplay src="sounds/ha milhares de anos.mp3"></audio>
                         <h2>A thousand years ago...</h2>
                         <img src="img/LinuxIsBorn.jpg" width="70%" height="70%" />
+                        <aside class="notes">
+                            Linus posted on a forum he is been working on a operating system, as a hobby.
+                            The community starts helping and giving suggestions. Months later, the Linux kernel releases its first version.
+                        </aside>
                     </section>
                     <section>
                         <img src="img/version-control.jpg">
+                        <aside class="notes">
+                            BitKeeper was a proprietary distributed VCS which had free accounts for open-source developers.
+                        </aside>
                     </section>
                     <section>
                         <img src="img/bitkeeper-lock.jpg">
+                        <aside class="notes">
+                            A git developer tried to reverse engineer a BitKeeper protocol, which was against their terms.
+                        </aside>
                     </section>
                     <section>
                         <h2>What do we need?</h2>
@@ -166,6 +186,10 @@
                     <h1>
                         Let's <span><code>git</code></span> ready!
                     </h1>
+                    <aside class="notes">
+                        Tell you're using the terminal to demo some commands.
+                        You can run every command from the terminal.
+                    </aside>
                 </section>
 
                 <section>
@@ -173,6 +197,7 @@
                     <code>
                         git init
                     </code>
+                    <aside class="notes">Creates a .git directory which contains the git database</aside>
                 </section>
 
                 <section>
@@ -186,6 +211,7 @@
                             <li class="fragment"><i>.git</i> directory</li>
                             <li class="fragment">Also known as <i>HEAD</i></li>
                         </ul>
+                        <aside class="notes">This is what makes Git fully distributable.</aside>
                     </section>
                     <section data-background="#f44d27">
                         <h2>Working Directory</h2>
@@ -225,6 +251,8 @@
                         <h2><code>git status</code></h2>
                         <p>The state of your <b style="color: #f44d27;">working directory</b></p>
                         <p class="fragment zoom-in" style="margin-top: 5rem;">This is your <b style="color: #67fb72;">best</b> friend!</p>
+
+                        <aside class="notes">git status often gives hint on what you should do next.</aside>
                     </section>
                     <section>
                         <h2>Our repo is empty :(</h2>
@@ -262,6 +290,8 @@
                         <h1>A snapsh<span class="snapshot-icon"></span>t</h1>
                         <p class="fragment">Snapshots, not differences</p>
                         <p class="fragment zoom-in">And that's what makes <code>git</code> <span style="font-size: 3rem; color: #0ae;">awesome!</span></p>
+
+                        <aside class="notes">That's what makes Git branching so fast.</aside>
                     </section>
                     <section>
                         <div>
@@ -305,10 +335,10 @@
                         <br />
                         <p class="fragment" data-fragment-index="3">There is a total of 2<sup>160</sup> hashes</p>
                         <p class="fragment" data-fragment-index="4">or 1.4615016373309029182036848327163<b style="color: #ffab3f;">x10<sup>48</sup></b></p>
-                        <img class="fragment transparent-img" data-fragment-index="4" src="img/waow.gif" alt="">
+                        <img class="fragment transparent-img" data-fragment-index="4" src="img/waow.gif" />
                     </section>
                 </section>
-                    
+
                 <section>
                     <section data-background="#02aed9">
                         <h1>Branching</h1>
@@ -320,6 +350,10 @@
                     <section>
                         <h2>On Git</h1>
                         <p>A branch is just a <span style="color: #0ae;">pointer</span> to a commit</p>
+                        <aside class="notes">
+                            <p>Creating and deleting branch is super fast.</p>
+                            <p>Different from other VCS, which creates a copy of the entire project which may take long.</p>
+                        </aside>
                     </section>
                     <section>
                         <h2>The <code>master</code> branch</h2>
@@ -349,12 +383,14 @@
                         <br />
                         <p class="fragment" data-fragment-index="0"><code>git commit -a -m "testing commit"</code></p>
                         <img class="fragment transparent-img" data-fragment-index="0" src="img/advance-testing.png" />
+                        <aside class="notes">-a includes all files to the staging area</aside>
                     </section>
                     <section>
                         <h2>Going back to <code>master</code></h2>
                         <br />
                         <p class="fragment" data-fragment-index="0"><code>git checkout master</code></p>
                         <img class="fragment transparent-img" data-fragment-index="0" src="img/checkout-master.png" />
+                        <aside class="notes">Cleans your working directory to make it look where master branch was.</aside>
                     </section>
                     <section>
                         <h2>Working on <code>master</code> again</h2>
@@ -521,6 +557,7 @@
                     </section>
                     <section data-background="img/iceberg.gif">
                         <h1 class="black-stroke">It's only the tip of the iceberg!</h1>
+                        <aside class="notes">Working with remotes, rebasing, pull requests, best practices...</aside>
                     </section>
                 </section>
 
