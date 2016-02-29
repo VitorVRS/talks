@@ -1,0 +1,567 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>The basics of Git</title>
+
+        <meta name="description" content="A presentation to show the basics of Git">
+        <meta name="author" content="Nícolas Nunes">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/night.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <style>
+            #whos-talking {
+                left: -20%;
+            }
+
+            #whos-talking h4 {
+                color: #69acff;
+                text-shadow: 2px 2px 3px #101;
+                -webkit-text-stroke: 1px #101;
+            }
+
+            #whos-talking h2 {
+                -webkit-text-stroke: 1px #000;
+                color: #0ae;
+                text-shadow: 2px 2px 2px #190D3F;
+            }
+
+            #git-slides .transparent-img {
+                background-color: transparent;
+                border: 0;
+                box-shadow: none;
+            }
+
+            .snapshot-icon {
+                background: url("img/snapshot.png");
+                display: inline-block;
+                background-size: 100px 100px;
+                width: 100px;
+                height: 100px;
+                margin: 0 0.15rem !important;
+            }
+
+            .o-icon {
+                background: url("img/who-o.png") no-repeat;
+                display: inline-block;
+                top: 1.25rem;
+                position: relative;
+                width: 49px;
+                height: 155px;
+                margin: 0 0.25rem !important;
+            }
+
+            .unstyled-code {
+                box-shadow: none !important;
+            }
+
+            .black-stroke {
+                -webkit-text-stroke: 2px #000;
+            }
+        </style>
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div id="git-slides" class="slides">
+                
+                <section>
+                    <h1>Learn to <code style="color: #0ae;">git</code>!</h1>
+                    <h3>Understanding the very basics</h3>
+                </section>
+
+                <section data-background="img/Julian1.png" id="whos-talking">
+                    <h2>Who's talking?</h2>
+                    <h4>Nícolas Nunes</h4>
+                    <h4>3 years with CSC</h4>
+                    <h4>Petrobras and Disney</h4>
+                </section>
+
+                <section>
+                    <h2>Summary</h2>
+                    <ul>
+                        <li>Version Control</li>
+                        <li>History!</li>
+                        <li>The git basics</li>
+                        <li>What is a commit?</li>
+                        <li>Branching</li>
+                        <li>Basic Merging</li>
+                        <li>GitHub</li>
+                    </ul>
+                </section>
+                
+                <section>
+                    <section data-background="#4E9D97">
+                        <h1>What is Version Control?</h1>
+                    </section>
+                    <section>
+                        <h2>Centralized Version Control</h2>
+                        <img src="img/centralized-vcs.png" width="70%" height="70%" class="transparent-img" />
+                    </section>
+                    <section>
+                        <h2>Distributed Version Control</h2>
+                        <img src="img/distributed-vcs.png" width="50%" height="50%" class="transparent-img" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>History!</h1>
+                    </section>
+                    <section>
+                        <audio data-autoplay src="sounds/ha milhares de anos.mp3"></audio>
+                        <h2>A thousand years ago...</h2>
+                        <img src="img/LinuxIsBorn.jpg" width="70%" height="70%" />
+                    </section>
+                    <section>
+                        <img src="img/version-control.jpg">
+                    </section>
+                    <section>
+                        <img src="img/bitkeeper-lock.jpg">
+                    </section>
+                    <section>
+                        <h2>What do we need?</h2>
+                        <ul>
+                            <li>Speed</li>
+                            <li>Simple design</li>
+                            <li>Strong support for non-linear development</li>
+                            <li>Fully distributed</li>
+                            <li>Able to handle large projects</li>
+                        </ul>
+                    </section>
+                    <section id="git-slide" data-background="#FFA052" data-transition="zoom">
+                        <img src="img/git-logo.png" class="transparent-img">
+                    </section>
+                </section>
+
+                <section data-transition="zoom">
+                    <audio data-autoplay src="sounds/game-ready.mp3"></audio>
+                    <h1>
+                        Let's <span><code>git</code></span> ready!
+                    </h1>
+                </section>
+
+                <section>
+                    <h2>Creating a repository</h2>
+                    <code>
+                        git init
+                    </code>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>The <span style="color: magenta;">three</span> sections</h1>
+                    </section>
+                    <section>
+                        <h2>Repository</h2>
+                        <ul>
+                            <li class="fragment">Where Git stores the metadata and object database of the project</li>
+                            <li class="fragment"><i>.git</i> directory</li>
+                            <li class="fragment">Also known as <i>HEAD</i></li>
+                        </ul>
+                    </section>
+                    <section data-background="#f44d27">
+                        <h2>Working Directory</h2>
+                        <ul>
+                            <li>The actual files</li>
+                            <li>Retrieved from the <b>Repository</b> and placed on the disk</li>
+                        </ul>
+                    </section>
+                    <section data-background="#00909a">
+                        <h2>Staging Area</h2>
+                        <ul>
+                            <li>Stores all changes that what will go in the next commit</li>
+                            <li>Also known as <i>Index</i></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>The three sections</h2>
+                        <img class="transparent-img" src="img/git-areas.png" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>The basic work<span style="color: #0ae;">flow</span></h1>
+                    </section>
+                    <section style="position: relative;">
+                        <h2 style="vertical-align: bottom;">Wh<span class="o-icon"></span> are you?</h2>
+                        <p>
+                            <code>git config --global user.name <i style="color: #0ae;">John Cena</i></code>
+                        </p>
+                        <p>
+                            <code>git config --global user.email <i style="color: #0ae;">champ@superslam.com</i></code>
+                        </p>
+                        <p class="fragment" style="margin-top: 5rem;">You only need to do it <b>once</b>.</p>
+                    </section>
+                    <section>
+                        <h2><code>git status</code></h2>
+                        <p>The state of your <b style="color: #f44d27;">working directory</b></p>
+                        <p class="fragment zoom-in" style="margin-top: 5rem;">This is your <b style="color: #67fb72;">best</b> friend!</p>
+                    </section>
+                    <section>
+                        <h2>Our repo is empty :(</h2>
+                        <p>Let's add a file to the <b style="color: #f44d27;">working directory</b>!</p>
+                    </section>
+                    <section>
+                        <audio data-autoplay src="sounds/pokemon-battle.mp3"></audio>
+                        <h1>A wild <b style="color: #fd3333;">untracked</b> file appears...</h1>
+                    </section>
+                    <section>
+                        <h2>Proposing a change</h2>
+                        <code>git add <i style="color: #0ae;">filename</i></code>
+                        <p>or</p>
+                        <code>git add *</code>
+                    </section>
+                    <section>
+                        <h2>The file is now tracked and is added to the <b style="color: #00909a;">Staging Area</b></h2>
+                    </section>
+                    <section>
+                        <h2>Committing a file</h2>
+                        <code>git commit</code>
+                        <p style="margin-top: 10rem;">Grabs all files from the <b style="color: #00909a;">Staging Area</b> and stores them into the <b>Repository</b></p>
+                    </section>
+                    <section>
+                        <h2>The file status lifecycle</h2>
+                        <img class="transparent-img" src="img/file-lifecycle.png" />
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h1>What exactly is a commit?</h1>
+                    </section>
+                    <section>
+                        <h1>A snapsh<span class="snapshot-icon"></span>t</h1>
+                        <p class="fragment">Snapshots, not differences</p>
+                        <p class="fragment zoom-in">And that's what makes <code>git</code> <span style="font-size: 3rem; color: #0ae;">awesome!</span></p>
+                    </section>
+                    <section>
+                        <div>
+                            <div style="display: flex; align-items: center; margin-bottom: 5rem;">
+                                <h3 style="width: 30%; margin-right: 5rem;">General VCS</h3>
+                                <img class="transparent-img" style="" width="60%" height="60%" src="img/vcs-differences.png" />
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <h3 style="width: 30%; margin-right: 5rem;">Git</h3>
+                                <img class="transparent-img" style="" width="60%" height="60%" src="img/git-snapshots.png" />
+                            </div>
+                        </div>
+                    </section>
+                    <section>
+                        <h2>The commit</h2>
+                        <p>It's an object!</p>
+                        <ul>
+                            <li>A <span class="fragment highlight-blue" data-fragment-index="0">pointer</span> to the snapshot you staged</li>
+                            <li>Author's name and e-mail</li>
+                            <li>The commit message</li>
+                            <li><span class="fragment highlight-blue" data-fragment-index="0">Pointers</span> to its parent commits</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>The <i>real&nbsp;</i> face of a commit</h2>
+                        <img class="transparent-img" src="img/commit.png" />
+                    </section>
+                    <section>
+                        <h2>A tree of commits</h2>
+                        <img class="transparent-img" src="img/commits-and-parents.png" />
+                    </section>
+                    <section>
+                        <h2>What are those <code><mark>98ca9</mark></code> <code><mark>92ec2</mark></code> things?</h2>
+                    </section>
+                    <section>
+                        <h2>The identifier <span class="fragment" data-fragment-index="0">and its integrity</span></h2>
+                        <p class="fragment" data-fragment-index="1">Everything in Git is check-summed with a SHA-1 hash</p>
+                        <br>
+                        <p class="fragment" data-fragment-index="2">A SHA-1 hash is string composed of 40 hexadecimal characters</p>
+                        <p class="fragment" style="color: #0ae;" data-fragment-index="2"><code>24b9da6552252987aa493b52f8696cd6d3b00373</code></p>
+                        <br />
+                        <p class="fragment" data-fragment-index="3">There is a total of 2<sup>160</sup> hashes</p>
+                        <p class="fragment" data-fragment-index="4">or 1.4615016373309029182036848327163<b style="color: #ffab3f;">x10<sup>48</sup></b></p>
+                        <img class="fragment transparent-img" data-fragment-index="4" src="img/waow.gif" alt="">
+                    </section>
+                </section>
+                    
+                <section>
+                    <section data-background="#02aed9">
+                        <h1>Branching</h1>
+                    </section>
+                    <section>
+                        <h2>The concept</h2>
+                        <p>Branching is how you <span style="color: #ffab3f;">diverge</span> from the main line of development and continue to do work without changing the main line</p>
+                    </section>
+                    <section>
+                        <h2>On Git</h1>
+                        <p>A branch is just a <span style="color: #0ae;">pointer</span> to a commit</p>
+                    </section>
+                    <section>
+                        <h2>The <code>master</code> branch</h2>
+                        <ul>
+                            <li class="fragment">The default branch</li>
+                            <li class="fragment">It's not special</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2>Creating a branch</h2>
+                        <code>git branch <i style="color: #0ae;">branch-name</i></code>
+                    </section>
+                    <section>
+                        <h2><code>git branch testing</code></h2>
+                        <img class="transparent-img" src="img/head-to-master.png" />
+                    </section>
+                    <section>
+                        <h2>Switching branches</h2>
+                        <code>git checkout <i style="color: #0ae;">branch-name</i></code>
+                    </section>
+                    <section>
+                        <h2><code>git checkout testing</code></h2>
+                        <img class="transparent-img" src="img/head-to-testing.png">
+                    </section>
+                    <section>
+                        <h2>What if you commit now?</h2>
+                        <br />
+                        <p class="fragment" data-fragment-index="0"><code>git commit -a -m "testing commit"</code></p>
+                        <img class="fragment transparent-img" data-fragment-index="0" src="img/advance-testing.png" />
+                    </section>
+                    <section>
+                        <h2>Going back to <code>master</code></h2>
+                        <br />
+                        <p class="fragment" data-fragment-index="0"><code>git checkout master</code></p>
+                        <img class="fragment transparent-img" data-fragment-index="0" src="img/checkout-master.png" />
+                    </section>
+                    <section>
+                        <h2>Working on <code>master</code> again</h2>
+                        <br />
+                        <p class="fragment" data-fragment-index="0"><code>git commit -a -m "master commit"</code></p>
+                        <img class="fragment transparent-img" width="85%" height="85%" data-fragment-index="0" src="img/advance-master.png" />
+                    </section>
+                    <section>
+                        <h2>Branches are cheap!</h2>
+                        <p class="fragment">Just a file with the 40-character SHA-1 hash of the commit</p>
+                        <p class="fragment"><span style="color: #0ae;">Use</span> and <span style="color: #0ae;">abuse</span> them!</p>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background="img/fusion.gif">
+                        <h1 class="black-stroke">Basic Merging</h1>
+                    </section>
+                    <section>
+                        <h2>The situation</h2>
+                        <p class="fragment" data-fragment-index="0">You are working on a web application which is used by thousands of users.</p>
+                        <br />
+                        <p class="fragment" data-fragment-index="1">Today, you decided that you are going to work on Issue #53.</p>
+                        <p class="fragment" data-fragment-index="1"><code>git checkout -b iss53</code></p>
+                        <br />
+                        <p class="fragment" data-fragment-index="2">You include a commit with a partial fix.</p>
+                        <p class="fragment" data-fragment-index="2"><code>git commit -a -m "Fix part of issue 53"</code></p>
+                    </section>
+                    <section>
+                        <h2>The repository</h2>
+                        <img class="transparent-img" src="img/fix-iss53.png" />
+                    </section>
+                    <section>
+                        <h2>Boom!</h2>
+                        <p>Your boss calls you saying there is an issue affecting all users and you need to fix it immediately.</p>
+                        <br />
+                        <p class="fragment" data-fragment-index="0">But I'm currently working on Issue #53 and already changed a lot of files. I don't want them with the fix.</p>
+                        <br />
+                        <p class="fragment" data-fragment-index="1">Don't worry! With Git, this is easy peasy!</p>
+                        <p class="fragment" data-fragment-index="1"><code>git checkout master</code></p>
+                    </section>
+                    <section>
+                        <h2>Let's fix it!</h2>
+                        <p>You create a new branch and fix the issue after some minutes of hard work.</p>
+                        <p><code>git checkout -b hotfix</code></p>
+                        <p><code>git commit -a -m "Fix the typo on the home page"</code></p>
+                    </section>
+                    <section>
+                        <h2>The current repository</h2>
+                        <img class="transparent-img" src="img/create-hotfix.png" />
+                    </section>
+                    <section>
+                        <h2>Fix is ready! Start deployment!</h2>
+                        <p>After some testing, you now want to merge the fix to the <code>master</code> branch where the production code is in.</p>
+                        <pre class="unstyled-code">
+                        $ git checkout master
+                        $ git merge hotfix
+                        Updating f42c576..3a0874c
+                        Fast-forward
+                         index.html | 2 ++
+                         1 file changed, 2 insertions(+)
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>A fast-forward merge</h2>
+                        <img class="transparent-img" src="img/fast-forward.png" />
+                    </section>
+                    <section>
+                        <h2>Let's go back to Issue #53</h2>
+                        <p>But first... Let's delete the <code style="color: #0ae;">hotfix</code> branch, since you don't need it anymore.</p>
+                        <pre class="unstyled-code">
+                        $ git branch -d hotfix
+                        Deleted branch hotfix (3a0874c)
+                        </pre>
+                    </section>
+                    <section>
+                        <h2>Finishing Issue #53</h2>
+                        <p>You get back to work on the issue.</p>
+                        <p><code>git checkout iss53</code></p>
+                        <p><code>git commit -a -m "Fix the second part of issue 53"</code></p>
+                    </section>
+                    <section>
+                        <h2>The repository</h2>
+                        <img class="transparent-img" src="img/continue-iss53.png" />
+                    </section>
+                    <section>
+                        <h2>It's time... to merge!</h2>
+                        <p>You decided that Issue #53 is now fixed and ready to be merged into <code>master</code>.</p>
+                        <pre class="unstyled-code">
+                        $ git checkout master
+                        Switched to branch 'master'
+                        $ git merge iss53
+                        Merge made by the 'recursive' strategy.
+                        index.html |    50 +
+                        1 file changed, 50 insertions(+)
+                        </pre>
+                        <br />
+                        <p class="fragment">That's a little different...</p>
+                    </section>
+                    <section>
+                        <h2>Git is working!</h2>
+                        <img class="transparent-img" src="img/before-merge.png" />
+                    </section>
+                    <section>
+                        <h2>A wild merge commit has appeared!</h2>
+                        <img class="transparent-img" src="img/after-merge.png" />
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background="#eecf00">
+                        <img class="transparent-img" src="img/logo-github.png" />
+                        <h2 style="color: black;">In 5 minutes!</h2>
+                    </section>
+                    <section>
+                        <h2>What is GitHub?</h2>
+                        <p>The largest host for Git repositories!</p>
+                        <p class="fragment">Central point of collaboration for <b style="color: #0ae;">millions</b> of developers and projects</p>
+                        <p class="fragment">Many utitilies: Issue tracking, code review, integrations and much more...</p>
+                        <p class="fragment">GitHub Enterprise</p>
+                    </section>
+                    <section>
+                        <h2>Creating a repository</h2>
+                        <img src="img/create-github.png" width="80%" height="80%" />
+                    </section>
+                    <section>
+                        <h2>Cloning the repository</h2>
+                        <p><code>git clone https://github.com/niiick1/my-remote</code></p>
+                    </section>
+                    <section>
+                        <h2>Showing your remotes</h2>
+                        <p><code>git remote -v</code></p>
+                    </section>
+                    <section>
+                        <h2>Getting data from the remote</h2>
+                        <p><code>git fetch <span style="color: #0ae;">origin</span></code></p>
+                        <br />
+                        <p class="fragment">This only downloads the repository data and will <b>not</b> modify your <span style="color: #f44d27;">working directory</span></p>
+                        <br />
+                        <p class="fragment"><code>git merge <span style="color: #0ae;">origin</span> <span style="color: #f1b602;">branch-name</span></code></p>
+                    </section>
+                    <section>
+                        <h2><code>git pull</code></h2>
+                        <p>A combination of <code>git fetch</code> and <code>git merge</code></p>
+                    </section>
+                    <section>
+                        <h2>Sending data to the remote</h2>
+                        <p><code>git push <span style="color: #0ae;">origin</span> <span style="color: #f1b602;">branch-name</span1></code></p>
+                    </section>
+                </section>
+
+                <section>
+                    <section data-background="img/end-is-near.gif">
+                        <h1 class="black-stroke">The end is near!</h1>
+                    </section>
+                    <section>
+                        <h2>Useful links</h2>
+                        <ul>
+                            <li><a href="https://git-scm.com/doc">Pro Git book</a></li>
+                            <li><a href="http://rogerdudler.github.io/git-guide/">git - the simple guide by Roger Dudler</a></li>
+                            <li><a href="https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf">The GitHub cheat sheet</a></li>
+                            <li><a href="https://try.github.io/levels/1/challenges/1">Try Git</a></li>
+                        </ul>
+                    </section>
+                    <section data-background="img/iceberg.gif">
+                        <h1 class="black-stroke">It's only the tip of the iceberg!</h1>
+                    </section>
+                </section>
+
+                <section>
+                    <h1>Thank you!</h1>
+                    <br>
+                    <p>Mail me!</p>
+                    <p><a href="mailto:nicolas.nunes@sap.com">nicolas.nunes@sap.com</a></p>
+                    <p><a href="mailto:nicolas.cnunes@gmail.com">nicolas.cnunes@gmail.com</a></p>
+                </section>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
