@@ -93,49 +93,42 @@
             <div id="git-slides" class="slides">
 
                 <section>
-                    <h1>Learn to <code style="color: #0ae;">git</code>!</h1>
-                    <h3>Understanding the very basics</h3>
-                </section>
-
-                <section data-background="img/Julian1.png" id="whos-talking">
-                    <h2>Who's talking?</h2>
-                    <h4>Nícolas Nunes</h4>
-                    <h4>3 years with CSC</h4>
-                    <h4>Petrobras and Disney</h4>
+                    <h1>Aprenda <code style="color: #0ae;">git</code>!</h1>
+                    <h3>Entendendo o básico</h3>
                 </section>
 
                 <section>
                     <h2>Agenda</h2>
                     <ul>
-                        <li>Version Control</li>
-                        <li>History!</li>
-                        <li>The <code>git</code> basics</li>
-                        <li>What is a commit?</li>
+                        <li>Controle de Versão</li>
+                        <li>História</li>
+                        <li>O básico do <code>git</code></li>
+                        <li>O que é um commit?</li>
                         <li>Branching</li>
-                        <li>Basic Merging</li>
+                        <li>Merging Básico</li>
                         <li>GitHub</li>
                     </ul>
                 </section>
 
                 <section>
                     <section data-background="#4E9D97">
-                        <h1>What is Version Control?</h1>
+                        <h1>O que é Controle de Versão?</h1>
                         <aside class="notes">
                             <ul>
-                                <li>Who uses Version Control?</li>
-                                <li>Who has ever heard about Git?</li>
-                                <li>Who has ever used with Git?</li>
+                                <li>Quem usa Controle de Versão?</li>
+                                <li>Quem nunca ouviu falar de Git?</li>
+                                <li>Quem nunca usou Git?</li>
                             </ul>
-                            <p>Linus says it's SCM (Source Control Management)</p>
+                            <p>Linus Torvalds disse: É um SCM (Source Control Management)</p>
                         </aside>
                     </section>
                     <section>
-                        <h2>Centralized Version Control</h2>
+                        <h2>Controle de Versão Centralizado</h2>
                         <img src="img/centralized-vcs.png" width="70%" height="70%" class="transparent-img" />
                         <aside class="notes">CVS, Subversion, Perforce</aside>
                     </section>
                     <section>
-                        <h2>Distributed Version Control</h2>
+                        <h2>Controle de Versão Distribuído</h2>
                         <img src="img/distributed-vcs.png" width="50%" height="50%" class="transparent-img" />
                         <aside class="notes">Git, Mercurial, Bazaar</aside>
                     </section>
@@ -143,49 +136,49 @@
 
                 <section>
                     <section>
-                        <h1>History!</h1>
+                        <h1>História</h1>
                     </section>
                     <section>
                         <audio data-autoplay src="sounds/ha milhares de anos.mp3"></audio>
-                        <h2>A thousand years ago...</h2>
+                        <h2>Há milhares de anos...</h2>
                         <img src="img/LinuxIsBorn.jpg" width="70%" height="70%" />
                         <aside class="notes">
-                            Linus posted on a forum he is been working on a operating system, as a hobby.
-                            The community starts helping and giving suggestions. Months later, the Linux kernel releases its first version.
+                            Deus Linus postou em um fórum que estava trabalhando em um novo SO, como um hobby.
+                            A comunidade começou a ajudar enviando sugestões. Meses depois, é liberada a primeira versão do kernel do Linux.
                         </aside>
                     </section>
                     <section>
                         <img src="img/version-control.jpg">
                         <aside class="notes">
-                            BitKeeper was a proprietary distributed VCS which had free accounts for open-source developers.
+                            BitKeeper era um VCS distribuído e proprietário que tinha licenças gratuitas para desenvolvedores open-source.
                         </aside>
                     </section>
                     <section>
                         <img src="img/bitkeeper-lock.jpg">
                         <aside class="notes">
-                            A git developer tried to reverse engineer a BitKeeper protocol, which was against their terms.
+                            Um desenvolvedor do git tentou fazer engenharia reversa no protocolo do BitKeeper, o que era contra o termos.
                         </aside>
                     </section>
                     <section>
-                        <h2>What do we need?</h2>
+                        <h2>O que nós precisamos?</h2>
                         <ul>
-                            <li>Speed</li>
-                            <li>Simple design</li>
-                            <li>Strong support for non-linear development</li>
-                            <li>Fully distributed</li>
-                            <li>Able to handle large projects</li>
+                            <li>Velocidade</li>
+                            <li>Design simples</li>
+                            <li>Suporte à desenolvimento não linear</li>
+                            <li>Ser totalmente distribuído</li>
+                            <li>Ser capaz de controlar projetos de grande porte</li>
                         </ul>
                     </section>
                     <section id="git-slide" data-background="#FFA052" data-transition="zoom">
                         <img src="img/git-logo.png" class="transparent-img">
-                        <aside class="notes">Although created to suit the Linux kernel needs, you can use Git for any files you want to version control.</aside>
+                        <aside class="notes">Embora criado para atender às necessidades do kernel do Linux, você pode usar o Git para qualquer arquivo.</aside>
                     </section>
                 </section>
 
                 <section data-transition="zoom">
                     <audio data-autoplay src="sounds/game-ready.mp3"></audio>
                     <h1>
-                        Let's <span><code>git</code></span> ready!
+                        Vamos começar!
                     </h1>
                     <aside class="notes">
                         Tell you're using the terminal to demo some commands.
@@ -194,7 +187,7 @@
                 </section>
 
                 <section>
-                    <h2>Creating a repository</h2>
+                    <h2>Criando um repositório</h2>
                     <code>
                         git init
                     </code>
@@ -203,96 +196,96 @@
 
                 <section>
                     <section>
-                        <h1>The <span style="color: magenta;">three</span> sections</h1>
+                        <h1>As <span style="color: magenta;">três</span> seções</h1>
                     </section>
                     <section>
                         <h2>Repository</h2>
                         <ul>
-                            <li class="fragment">Where Git stores the metadata and object database of the project</li>
-                            <li class="fragment"><i>.git</i> directory</li>
-                            <li class="fragment">Also known as <i>HEAD</i></li>
+                            <li class="fragment">Onde Git guarda os metadados e o banco de objetos do projeto</li>
+                            <li class="fragment">Diretório <i>.git</i></li>
+                            <li class="fragment">Também conhecido como <i>HEAD</i></li>
                         </ul>
                         <aside class="notes">This is what makes Git fully distributable.</aside>
                     </section>
                     <section data-background="#f44d27">
                         <h2>Working Directory</h2>
                         <ul>
-                            <li>The actual files</li>
-                            <li>Retrieved from the <b>Repository</b> and placed on the disk</li>
+                            <li>Arquivos atuais</li>
+                            <li>Retirados do <b>Repository</b> e colocados no disco</li>
                         </ul>
                     </section>
                     <section data-background="#00909a">
                         <h2>Staging Area</h2>
                         <ul>
-                            <li>Stores all changes that what will go in the next commit</li>
-                            <li>Also known as <i>Index</i></li>
+                            <li>Guarda todas as alterações que vão ir para o próximo commit</li>
+                            <li>Também conhecido como <i>Index</i></li>
                         </ul>
                     </section>
                     <section>
-                        <h2>The three sections</h2>
+                        <h2>As três seções</h2>
                         <img class="transparent-img" src="img/git-areas.png" />
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h1>The basic work<span style="color: #0ae;">flow</span></h1>
+                        <h1>O <span style="color: #0ae;">fluxo</span> de trabalho básico</h1>
                     </section>
                     <section style="position: relative;">
-                        <h2 style="vertical-align: bottom;">Wh<span class="o-icon"></span> are you?</h2>
+                        <h2 style="vertical-align: bottom;">Quem é você?</h2>
                         <p>
-                            <code>git config --global user.name <i style="color: #0ae;">John Cena</i></code>
+                            <code>git config --global user.name <i style="color: #0ae;">VitorVRS</i></code>
                         </p>
                         <p>
-                            <code>git config --global user.email <i style="color: #0ae;">champ@superslam.com</i></code>
+                            <code>git config --global user.email <i style="color: #0ae;">vitor.vrs@gmail.com</i></code>
                         </p>
-                        <p class="fragment" style="margin-top: 5rem;">You only need to do it <b>once</b>.</p>
+                        <p class="fragment" style="margin-top: 5rem;">Você só precisa fazer isso <b>uma vez</b>.</p>
                     </section>
                     <section>
                         <h2><code>git status</code></h2>
-                        <p>The state of your <b style="color: #f44d27;">working directory</b></p>
-                        <p class="fragment zoom-in" style="margin-top: 5rem;">This is your <b style="color: #67fb72;">best</b> friend!</p>
+                        <p>Mostra o estado do seu <b style="color: #f44d27;">working directory</b></p>
+                        <p class="fragment zoom-in" style="margin-top: 5rem;">Ele é seu <b style="color: #67fb72;">melhor</b> amigo!</p>
 
                         <aside class="notes">git status often gives hint on what you should do next.</aside>
                     </section>
                     <section>
-                        <h2>Our repo is empty :(</h2>
-                        <p>Let's add a file to the <b style="color: #f44d27;">working directory</b>!</p>
+                        <h2>Nosso repositório está vazio :(</h2>
+                        <p>Vamos adicionar um arquivo ao <b style="color: #f44d27;">working directory</b>!</p>
                     </section>
                     <section>
                         <audio data-autoplay src="sounds/pokemon-battle.mp3"></audio>
                         <h1>A wild <b style="color: #fd3333;">untracked</b> file appears...</h1>
                     </section>
                     <section>
-                        <h2>Proposing a change</h2>
+                        <h2>Proposta de mudança</h2>
                         <code>git add <i style="color: #0ae;">filename</i></code>
-                        <p>or</p>
+                        <p>ou</p>
                         <code>git add *</code>
                     </section>
                     <section>
-                        <h2>The file is now tracked and is added to the <b style="color: #00909a;">Staging Area</b></h2>
+                        <h2>O arquivo agora será "rastreado" e será adicionado ao <b style="color: #00909a;">Staging Area</b></h2>
                     </section>
                     <section>
-                        <h2>Committing a file</h2>
+                        <h2>Realizando um commit</h2>
                         <code>git commit</code>
-                        <p style="margin-top: 10rem;">Grabs all files from the <b style="color: #00909a;">Staging Area</b> and stores them into the <b>Repository</b></p>
+                        <p style="margin-top: 10rem;">Junta todos os arquivos do <b style="color: #00909a;">Staging Area</b> e guarda dentro do <b>Repository</b></p>
                     </section>
                     <section>
-                        <h2>The file status lifecycle</h2>
+                        <h2>Ciclo de vida de um arquivo</h2>
                         <img class="transparent-img" src="img/file-lifecycle.png" />
                     </section>
                 </section>
 
                 <section>
                     <section>
-                        <h1>What exactly is a commit?</h1>
+                        <h1>O que é, exatamente, um commit?</h1>
                     </section>
                     <section>
-                        <h1>A snapsh<span class="snapshot-icon"></span>t</h1>
-                        <p class="fragment">Snapshots, not differences</p>
-                        <p class="fragment zoom-in">And that's what makes <code>git</code> <span style="font-size: 3rem; color: #0ae;">awesome!</span></p>
+                        <h1>Um snapsh<span class="snapshot-icon"></span>t</h1>
+                        <p class="fragment">Snapshots, não as diferenças</p>
+                        <p class="fragment zoom-in">E é isso que faz o <code>git</code> ser <span style="font-size: 3rem; color: #0ae;">f*da!</span></p>
 
-                        <aside class="notes">That's what makes Git branching so fast.</aside>
+                        <aside class="notes">Por exemplo, o CVS trabalha com "patches" das revisões</aside>
                     </section>
                     <section>
                         <div>
@@ -307,35 +300,35 @@
                         </div>
                     </section>
                     <section>
-                        <h2>The commit</h2>
-                        <p>It's an object!</p>
+                        <h2>O commit</h2>
+                        <p>É um objeto!</p>
                         <ul>
-                            <li>A <span class="fragment highlight-blue" data-fragment-index="0">pointer</span> to the snapshot you staged</li>
-                            <li>Author's name and e-mail</li>
-                            <li>The commit message</li>
-                            <li><span class="fragment highlight-blue" data-fragment-index="0">Pointers</span> to its parent commits</li>
+                            <li>Um <span class="fragment highlight-blue" data-fragment-index="0">ponteiro</span> ao snapshot do Staging Area</li>
+                            <li>Nome do autor e e-mail</li>
+                            <li>A mensagem do commit</li>
+                            <li><span class="fragment highlight-blue" data-fragment-index="0">Ponteiro</span> apontando para o commit pai/ancestral</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>The <i>real&nbsp;</i> face of a commit</h2>
+                        <h2>A <i>verdadeira&nbsp;</i> cara de um commit</h2>
                         <img class="transparent-img" src="img/commit.png" />
                     </section>
                     <section>
-                        <h2>A tree of commits</h2>
+                        <h2>Um árvore de commits</h2>
                         <img class="transparent-img" src="img/commits-and-parents.png" />
                     </section>
                     <section>
-                        <h2>What are those <code><mark>98ca9</mark></code> <code><mark>92ec2</mark></code> things?</h2>
+                        <h2>O que são estes <code><mark>98ca9</mark></code> <code><mark>92ec2</mark></code>?</h2>
                     </section>
                     <section>
-                        <h2>The identifier <span class="fragment" data-fragment-index="0">and its integrity</span></h2>
-                        <p class="fragment" data-fragment-index="1">Everything in Git is check-summed with a SHA-1 hash</p>
+                        <h2>Um identificador</h2>
+                        <p class="fragment" data-fragment-index="1">Tudo no Git é garantido sua unicidade com um hash SHA-1</p>
                         <br>
-                        <p class="fragment" data-fragment-index="2">A SHA-1 hash is string composed of 40 hexadecimal characters</p>
+                        <p class="fragment" data-fragment-index="2">Um hash SHA-1 é uma string composta de 40 caracteres</p>
                         <p class="fragment" style="color: #0ae;" data-fragment-index="2"><code>24b9da6552252987aa493b52f8696cd6d3b00373</code></p>
                         <br />
-                        <p class="fragment" data-fragment-index="3">There is a total of 2<sup>160</sup> hashes</p>
-                        <p class="fragment" data-fragment-index="4">or 1.4615016373309029182036848327163<b style="color: #ffab3f;">x10<sup>48</sup></b></p>
+                        <p class="fragment" data-fragment-index="3">Existe um total de 2<sup>160</sup> hashes</p>
+                        <p class="fragment" data-fragment-index="4">ou 1.4615016373309029182036848327163<b style="color: #ffab3f;">x10<sup>48</sup></b></p>
                         <img class="fragment transparent-img" data-fragment-index="4" src="img/waow.gif" />
                     </section>
                 </section>
@@ -345,26 +338,26 @@
                         <h1>Branching</h1>
                     </section>
                     <section>
-                        <h2>The concept</h2>
-                        <p>Branching is how you <span style="color: #ffab3f;">diverge</span> from the main line of development and continue to do work without changing the main line</p>
+                        <h2>O conceito</h2>
+                        <p>Branching é como você <span style="color: #ffab3f;">diverge</span> da linha principal de desenvolvimento e continua a trabalhar sem ter que alterar a linha principal</p>
                     </section>
                     <section>
-                        <h2>On Git</h1>
-                        <p>A branch is just a <span style="color: #0ae;">pointer</span> to a commit</p>
+                        <h2>No Git</h1>
+                        <p>Um branch é apenas um <span style="color: #0ae;">ponteiro</span> à um commit</p>
                         <aside class="notes">
                             <p>Creating and deleting branch is super fast.</p>
                             <p>Different from other VCS, which creates a copy of the entire project which may take long.</p>
                         </aside>
                     </section>
                     <section>
-                        <h2>The <code>master</code> branch</h2>
+                        <h2>O branch <code>master</code></h2>
                         <ul>
-                            <li class="fragment">The default branch</li>
-                            <li class="fragment">It's not special</li>
+                            <li class="fragment">O branch default</li>
+                            <li class="fragment">Não tem nada de especial</li>
                         </ul>
                     </section>
                     <section>
-                        <h2>Creating a branch</h2>
+                        <h2>Criando um branch</h2>
                         <code>git branch <i style="color: #0ae;">branch-name</i></code>
                     </section>
                     <section>
@@ -372,7 +365,7 @@
                         <img class="transparent-img" src="img/head-to-master.png" />
                     </section>
                     <section>
-                        <h2>Switching branches</h2>
+                        <h2>Alternando entre branches</h2>
                         <code>git checkout <i style="color: #0ae;">branch-name</i></code>
                     </section>
                     <section>
@@ -380,72 +373,72 @@
                         <img class="transparent-img" src="img/head-to-testing.png">
                     </section>
                     <section>
-                        <h2>What if you commit now?</h2>
+                        <h2>E se você commitar agora?</h2>
                         <br />
                         <p class="fragment" data-fragment-index="0"><code>git commit -a -m "testing commit"</code></p>
                         <img class="fragment transparent-img" data-fragment-index="0" src="img/advance-testing.png" />
                         <aside class="notes">-a includes all files to the staging area</aside>
                     </section>
                     <section>
-                        <h2>Going back to <code>master</code></h2>
+                        <h2>Voltando ao <code>master</code></h2>
                         <br />
                         <p class="fragment" data-fragment-index="0"><code>git checkout master</code></p>
                         <img class="fragment transparent-img" data-fragment-index="0" src="img/checkout-master.png" />
                         <aside class="notes">Cleans your working directory to make it look where master branch was.</aside>
                     </section>
                     <section>
-                        <h2>Working on <code>master</code> again</h2>
+                        <h2>Trabalhando no <code>master</code> denovo</h2>
                         <br />
                         <p class="fragment" data-fragment-index="0"><code>git commit -a -m "master commit"</code></p>
                         <img class="fragment transparent-img" width="85%" height="85%" data-fragment-index="0" src="img/advance-master.png" />
                     </section>
                     <section>
-                        <h2>Branches are cheap!</h2>
-                        <p class="fragment">Just a file with the 40-character SHA-1 hash of the commit</p>
-                        <p class="fragment"><span style="color: #0ae;">Use</span> and <span style="color: #0ae;">abuse</span> them!</p>
+                        <h2>Branches são "econômicos"!</h2>
+                        <p class="fragment">São apenas um arquivo de 40 caracteres (um SHA-1 de um commit)</p>
+                        <p class="fragment"><span style="color: #0ae;">Usem</span> e <span style="color: #0ae;">abusem</span> deles!</p>
                     </section>
                 </section>
 
                 <section>
                     <section data-background="img/fusion.gif">
-                        <h1 class="black-stroke">Basic Merging</h1>
+                        <h1 class="black-stroke">Merging Básico</h1>
                     </section>
                     <section>
-                        <h2>The situation</h2>
-                        <p class="fragment" data-fragment-index="0">You are working on a web application which is used by thousands of users.</p>
+                        <h2>Um exemplo</h2>
+                        <p class="fragment" data-fragment-index="0">Você está trabalhando numa aplicação web que é usada por milhares de usuários.</p>
                         <br />
-                        <p class="fragment" data-fragment-index="1">Today, you decided that you are going to work on Issue #53.</p>
+                        <p class="fragment" data-fragment-index="1">Hoje, você decide trabalhar numa issue #53.</p>
                         <p class="fragment" data-fragment-index="1"><code>git checkout -b iss53</code></p>
                         <br />
-                        <p class="fragment" data-fragment-index="2">You include a commit with a partial fix.</p>
+                        <p class="fragment" data-fragment-index="2">Você cria um commit com a correção parcial.</p>
                         <p class="fragment" data-fragment-index="2"><code>git commit -a -m "Fix part of issue 53"</code></p>
                     </section>
                     <section>
-                        <h2>The repository</h2>
+                        <h2>O repositório</h2>
                         <img class="transparent-img" src="img/fix-iss53.png" />
                     </section>
                     <section>
                         <h2>Boom!</h2>
-                        <p>Your boss calls you saying there is an issue affecting all users and you need to fix it immediately.</p>
+                        <p>Seu chefe liga dizendo que há um problema afetando todos os usuários e você precisa resolver imediatamente.</p>
                         <br />
-                        <p class="fragment" data-fragment-index="0">But I'm currently working on Issue #53 and already changed a lot of files. I don't want them with the fix.</p>
+                        <p class="fragment" data-fragment-index="0">Mas eu estou trabalhando na issue #53 e já alterei um monte de arquivos. Eu não quero eles juntos com a nova correção.</p>
                         <br />
-                        <p class="fragment" data-fragment-index="1">Don't worry! With Git, this is easy peasy!</p>
+                        <p class="fragment" data-fragment-index="1">Não se preocupe! Com Git é barbada!</p>
                         <p class="fragment" data-fragment-index="1"><code>git checkout master</code></p>
                     </section>
                     <section>
-                        <h2>Let's fix it!</h2>
-                        <p>You create a new branch and fix the issue after some minutes of hard work.</p>
+                        <h2>Vamo corrigir!</h2>
+                        <p>Você cria um novo branch e corrige o problema.</p>
                         <p class="fragment" data-fragment-index="0"><code>git checkout -b hotfix</code></p>
-                        <p class="fragment" data-fragment-index="0"><code>git commit -a -m "Fix the typo on the home page"</code></p>
+                        <p class="fragment" data-fragment-index="0"><code>git commit -a -m "Correção da página inicial"</code></p>
                     </section>
                     <section>
-                        <h2>The current repository</h2>
+                        <h2>O repositório atual</h2>
                         <img class="transparent-img" src="img/create-hotfix.png" />
                     </section>
                     <section>
-                        <h2>Fix is ready! Start deployment!</h2>
-                        <p>After some testing, you now want to merge the fix to the <code>master</code> branch where the production code is in.</p>
+                        <h2>A correção está pronta! Coloque em produção!</h2>
+                        <p>Após alguns testes, você quer aplicar a correção ao branch <code>master</code>, no qual seria "produção".</p>
                         <pre class="fragment unstyled-code">
                         $ git checkout master
                         $ git merge hotfix
@@ -456,30 +449,30 @@
                         </pre>
                     </section>
                     <section>
-                        <h2>A fast-forward merge</h2>
+                        <h2>O merge fast-forward</h2>
                         <img class="transparent-img" src="img/fast-forward.png" />
                     </section>
                     <section>
-                        <h2>Let's go back to Issue #53</h2>
-                        <p>But first... Let's delete the <code style="color: #0ae;">hotfix</code> branch, since you don't need it anymore.</p>
+                        <h2>Vamos voltar à issue #53</h2>
+                        <p>Mas antes vamos apagar o branch <code style="color: #0ae;">hotfix</code>, agora que não precisamos mais.</p>
                         <pre class="fragment unstyled-code">
                         $ git branch -d hotfix
                         Deleted branch hotfix (3a0874c)
                         </pre>
                     </section>
                     <section>
-                        <h2>Finishing Issue #53</h2>
-                        <p>You get back to work on the issue.</p>
+                        <h2>Finalizando a issue #53</h2>
+                        <p>Você volta a trabalhar na issue #53</p>
                         <p class="fragment" data-fragment-index="0"><code>git checkout iss53</code></p>
-                        <p class="fragment" data-fragment-index="0"><code>git commit -a -m "Fix the second part of issue 53"</code></p>
+                        <p class="fragment" data-fragment-index="0"><code>git commit -a -m "Corrigido o resto do bug"</code></p>
                     </section>
                     <section>
-                        <h2>The repository</h2>
+                        <h2>O repositório</h2>
                         <img class="transparent-img" src="img/continue-iss53.png" />
                     </section>
                     <section>
-                        <h2>It's time... to merge!</h2>
-                        <p>You decided that Issue #53 is now fixed and ready to be merged into <code>master</code>.</p>
+                        <h2>É hora do... merge!</h2>
+                        <p>Você decide que a issue #53 está corrigida e pronta para se juntar ao branch <code>master</code>.</p>
                         <pre class="fragment unstyled-code">
                         $ git checkout master
                         Switched to branch 'master'
@@ -489,15 +482,15 @@
                         1 file changed, 50 insertions(+)
                         </pre>
                         <br />
-                        <p class="fragment">That's a little different...</p>
+                        <p class="fragment">É um pouco diferente do outro merge...</p>
                     </section>
                     <section>
-                        <h2>Git is working behind the scenes!</h2>
+                        <h2>Git está fazendo a mão por trás!</h2>
                         <img class="transparent-img" src="img/before-merge.png" />
-                        <aside class="notes">Since Git stores pointers to the parent commit, he knows easily who is the Common Ancestor. Then he's able to do a 3-way merge.</aside>
+                        <aside class="notes">Git guarda os ponteiros to commit pai, ele sabe facilmente quem é o Ancestral Comum. Então consegue fazer um 3-way.</aside>
                     </section>
                     <section>
-                        <h2>A wild merge commit has appeared!</h2>
+                        <h2>Um commit de merge aparece!</h2>
                         <img class="transparent-img" src="img/after-merge.png" />
                     </section>
                 </section>
@@ -505,43 +498,43 @@
                 <section>
                     <section data-background="#eecf00">
                         <img class="transparent-img" src="img/logo-github.png" />
-                        <h2 style="color: black;">In 5 minutes!</h2>
+                        <h2 style="color: black;">Em 5 minutos!</h2>
                     </section>
                     <section>
-                        <h2>What is GitHub?</h2>
-                        <p>The largest host for Git repositories!</p>
-                        <p class="fragment">Central point of collaboration for <b style="color: #0ae;">millions</b> of developers and projects</p>
-                        <p class="fragment">So many languages... <a href="http://githut.info/">@GitHut.info</a></p>
-                        <p class="fragment">Many utitilies: Issue tracking, code review, wikis, integrations and much more...</p>
+                        <h2>O que é GitHub?</h2>
+                        <p>O maior servidor de repositórios Git!</p>
+                        <p class="fragment">Ponto central de colaboração de <b style="color: #0ae;">milhões</b> de desenvolvedores e projetos.</p>
+                        <p class="fragment">Muitas linguagens... <a href="http://githut.info/">@GitHut.info</a></p>
+                        <p class="fragment">Muitos utilitários: Controle de Issues, Revisão de código, wikis, integrações e muito mais...</p>
                         <p class="fragment">GitHub Enterprise</p>
-                        <aside class="notes">Over 12 million people and 31 million projects.</aside>
+                        <aside class="notes">Mais de 12 milhões de pessoas e 31 milhões de projetos.</aside>
                     </section>
                     <section>
-                        <h2>Creating a repository</h2>
+                        <h2>Criando um repositório</h2>
                         <img src="img/create-github.png" width="80%" height="80%" />
                     </section>
                     <section>
-                        <h2>Cloning the repository</h2>
-                        <p><code>git clone https://github.com/niiick1/my-remote</code></p>
+                        <h2>Clonando um repositório</h2>
+                        <p><code>git clone https://github.com/VitorVRS/vrsflix</code></p>
                     </section>
                     <section>
-                        <h2>Showing your remotes</h2>
+                        <h2>Mostrando seu repositório remoto</h2>
                         <p><code>git remote -v</code></p>
                     </section>
                     <section>
-                        <h2>Getting data from the remote</h2>
+                        <h2>Lendo os dados do repositório remoto</h2>
                         <p><code>git fetch <span style="color: #0ae;">origin</span></code></p>
                         <br />
-                        <p class="fragment">This only downloads the repository data and will <b>not</b> modify your <span style="color: #f44d27;">working directory</span></p>
+                        <p class="fragment">Isso apenas baixa os dados do repositório e <b>não</b> vai modificar o seu <span style="color: #f44d27;">Working Directory</span></p>
                         <br />
                         <p class="fragment"><code>git merge <span style="color: #0ae;">origin</span> <span style="color: #f1b602;">branch-name</span></code></p>
                     </section>
                     <section>
                         <h2><code>git pull</code></h2>
-                        <p>A combination of <code>git fetch</code> and <code>git merge</code></p>
+                        <p>Um combinação de <code>git fetch</code> e <code>git merge</code></p>
                     </section>
                     <section>
-                        <h2>Sending data to the remote</h2>
+                        <h2>Enviando dados ao repositório remoto</h2>
                         <p><code>git push <span style="color: #0ae;">origin</span> <span style="color: #f1b602;">branch-name</span1></code></p>
                     </section>
                 </section>
@@ -551,7 +544,7 @@
                         <h1 class="black-stroke">The end is near!</h1>
                     </section>
                     <section>
-                        <h2>Useful links</h2>
+                        <h2>Links úteis</h2>
                         <ul>
                             <li><a href="https://git-scm.com/doc">Pro Git book</a></li>
                             <li><a href="http://rogerdudler.github.io/git-guide/">git - the simple guide by Roger Dudler</a></li>
@@ -561,17 +554,16 @@
                         </ul>
                     </section>
                     <section data-background="img/iceberg.gif">
-                        <h1 class="black-stroke">It's only the tip of the iceberg!</h1>
+                        <h1 class="black-stroke">É apenas a ponta do Iceberg!</h1>
                         <aside class="notes">Working with remotes, rebasing, pull requests, development flows, best practices...</aside>
                     </section>
                 </section>
 
                 <section>
-                    <h1>Thank you!</h1>
+                    <h1>Obrigado!</h1>
                     <br>
-                    <p>Mail me!</p>
-                    <p><a href="mailto:nicolas.nunes@sap.com">nicolas.nunes@sap.com</a></p>
-                    <p><a href="mailto:nicolas.cnunes@gmail.com">nicolas.cnunes@gmail.com</a></p>
+                    <p><a href="mailto:vitor@dbseller.com.br">vitor@dbseller.com.br</a></p>
+                    <p><a href="mailto:vitor.vrs@gmail.com">vitor.vrs@gmail.com</a></p>
                 </section>
             </div>
 
